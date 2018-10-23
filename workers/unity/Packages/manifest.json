@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "com.improbable.gdk.buildsystem": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.buildsystem",
+    "com.improbable.gdk.core": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.core",
+    "com.improbable.gdk.gameobjectcreation": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.gameobjectcreation",
+    "com.improbable.gdk.playerlifecycle": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.playerlifecycle",
+    "com.improbable.gdk.testutils": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.testutils",
+    "com.improbable.gdk.tools": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.tools",
+    "com.improbable.gdk.transformsynchronization": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.transformsynchronization",
+    "com.unity.package-manager-ui": "1.9.11",
+    "com.unity.modules.physics": "1.0.0"
+  },
+  "registry": "https://staging-packages.unity.com"
+}
