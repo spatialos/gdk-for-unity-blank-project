@@ -2,7 +2,7 @@
 
 This is a blank project that you can use to build your own game with the [SpatialOS GDK for Unity](https://github.com/spatialos/gdk-for-unity).
 
-Ensure that the GDK for Unity is alongside the Blank Project side-by-side, so they both share a common parent directory:
+To use the blank project, you need to lone the GDK for Unity repository alongside the Blank Project so that they sit side-by-side:
 
 ```
   <common_parent_directory>
