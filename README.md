@@ -16,7 +16,7 @@ You can use scripts to automatically do this or follow manual instructions.
 From the root of the `gdk-for-unity-blank-project` repository:
 
 * If you are using Windows run: `powershell scripts/powershell/setup.ps1`
-    * If you are using Mac run: `bash scripts/shell/setup.sh`
+* If you are using Mac run: `bash scripts/shell/setup.sh`
 
 ##### Manual set up
 1. Clone the [GDK for Unity](https://github.com/spatialos/gdk-for-unity) repository alongside the Blank Project so that they sit side-by-side:
