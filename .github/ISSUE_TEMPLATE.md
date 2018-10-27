@@ -1,21 +1,17 @@
-We are accepting issues and we want your [feedback](https://github.com/spatialos/gdk-for-unity#give-us-feedback).
-
--------
-
 #### Description
 Describe your issue.
 
 ## Expected behaviour
-<!--- Tell us what should happen. -->
+<!--- Tell me what should happen. -->
 
 ## Current behaviour
-<!--- Tell us what happens instead of the expected behaviour. -->
+<!--- Tell me what happens instead of the expected behaviour. -->
 
 ## Possible solution
 <!--- This is not obligatory but if you have a preference, please suggest a fix for the bug. -->
 
 ## Steps to reproduce
-<!--- Provide an unambiguous set of steps to reproduce this bug. Include code snippets if relevant. -->
+<!--- Provide an unambiguous set of steps to reproduce this bug. Include code snippets if relevant and screenshots if possible. -->
 1.
 2.
 3.
