@@ -7,6 +7,7 @@
 ### Added
 
 - Added a changelog.
+- Added examples for mobile client-workers.
 
 ### Changed
 
