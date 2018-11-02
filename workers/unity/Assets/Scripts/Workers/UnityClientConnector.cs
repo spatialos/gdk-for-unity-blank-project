@@ -4,7 +4,7 @@ using Improbable.Worker.Core;
 
 namespace BlankProject
 {
-    public class UnityClientConnector : WorkerConnector
+    public class UnityClientConnector : DefaultWorkerConnector
     {
         public const string WorkerType = "UnityClient";
         

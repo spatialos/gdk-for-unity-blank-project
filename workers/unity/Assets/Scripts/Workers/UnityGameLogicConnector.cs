@@ -5,7 +5,7 @@ using Improbable.Gdk.TransformSynchronization;
 
 namespace BlankProject
 {
-    public class UnityGameLogicConnector : WorkerConnector
+    public class UnityGameLogicConnector : DefaultWorkerConnector
     {
         public const string WorkerType = "UnityGameLogic";
         
