@@ -7,6 +7,11 @@
 ### Added
 
 - Added a changelog.
+- Added examples for mobile client-workers.
+
+### Changed
+
+- Upgraded to GDK for Unity version `0.1.2`
 
 ### Changed
 
