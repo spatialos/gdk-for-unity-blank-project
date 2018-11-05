@@ -33,7 +33,6 @@ namespace BlankProject
                 .AddMetadata("Player", serverAttribute)
                 .SetPersistence(false)
                 .SetReadAcl(AllWorkerAttributes)
-                .SetEntityAclComponentWriteAccess(serverAttribute)
                 .AddPlayerLifecycleComponents(workerId, clientAttribute, serverAttribute)
                 .AddTransformSynchronizationComponents(clientAttribute);
 
