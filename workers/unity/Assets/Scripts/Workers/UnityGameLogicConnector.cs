@@ -20,6 +20,7 @@ namespace BlankProject
 
         protected override void HandleWorkerConnectionEstablished()
         {
+            Worker.World.GetOrCreateManager<MetricSendSystem>();
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
         }
 
