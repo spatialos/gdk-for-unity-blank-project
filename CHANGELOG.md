@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Fixed
+- Fixed an issue with the default snapshot that prevented the player lifecycle module from spawning a player.
+
 ## `0.1.2` - 2018-11-02
 
 ### Added
