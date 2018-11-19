@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace BlankProject
 {
+    [DisableAutoCreation]
     public class MetricSendSystem : ComponentSystem
     {
         private Connection connection;
