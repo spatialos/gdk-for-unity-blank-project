@@ -9,7 +9,6 @@
 ### Fixed
 
 - Fixed an issue with the default snapshot that prevented the player lifecycle module from spawning a player.
-- Fixed a `NullReferenceException` in `MetricSendSystem` when using the default ecs world.
 
 ## `0.1.2` - 2018-11-02
 
