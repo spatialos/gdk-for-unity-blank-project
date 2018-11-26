@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## `0.1.3` - 2018-11-26
+
 ### Added
 
 - Added a metric sending system for load, FPS and Unity heap usage.
+
+### Changed
+
+- Upgraded to GDK for Unity version `0.1.3`.
 
 ### Fixed
 
