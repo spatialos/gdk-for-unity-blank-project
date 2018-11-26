@@ -1,6 +1,6 @@
 ﻿using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
-using Improbable.Worker.Core;
+using Improbable.Worker.CInterop;
 
 namespace BlankProject
 {
