@@ -15,6 +15,7 @@
 ### Fixed
 
 - Fixed an issue with the default snapshot that prevented the player lifecycle module from spawning a player.
+- Fixed a bug where you could start each built-out worker only once on OSX.
 
 ## `0.1.2` - 2018-11-02
 
