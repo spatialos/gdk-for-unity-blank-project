@@ -7,6 +7,7 @@
 ### Added
 
 - Added a metric sending system for load, FPS and Unity heap usage.
+- Added support for connecting mobile clients to cloud deployments.
 
 ### Changed
 
