@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.PlayerLifecycle;
 using UnityEngine;
@@ -12,9 +12,6 @@ namespace BlankProject.Editor
         {
             public string OutputPath;
         }
-        
-        private static readonly List<string> UnityWorkers =
-            new List<string> { UnityClientConnector.WorkerType, UnityGameLogicConnector.WorkerType };
 
         public static void Generate(Arguments arguments)
         {
@@ -35,18 +32,18 @@ namespace BlankProject.Editor
 
         private static void AddPlayerSpawner(Snapshot snapshot)
         {
-            var playerCreator = PlayerCreator.Component.CreateSchemaComponentData();
             var serverAttribute = UnityGameLogicConnector.WorkerType;
             
-            var spawner = EntityBuilder.Begin()
-                .AddPosition(0, 0, 0, serverAttribute)
-                .AddMetadata("PlayerCreator", serverAttribute)
-                .SetPersistence(true)
-                .SetReadAcl(UnityWorkers)
-                .AddComponent(playerCreator, serverAttribute)
-                .Build();
-            
-            snapshot.AddEntity(spawner);
+            var template = new EntityTemplate();
+            template.AddComponent(new Position.Snapshot(), serverAttribute);
+            template.AddComponent(new Metadata.Snapshot { EntityType = "PlayerCreator" }, serverAttribute);
+            template.AddComponent(new Persistence.Snapshot(), serverAttribute);
+            template.AddComponent(new PlayerCreator.Snapshot(), serverAttribute);
+
+            template.SetReadAccess(UnityClientConnector.WorkerType, UnityGameLogicConnector.WorkerType, AndroidClientWorkerConnector.WorkerType, iOSClientWorkerConnector.WorkerType);
+            template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
+
+            snapshot.AddEntity(template);
         }
     }
 }

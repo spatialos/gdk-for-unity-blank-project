@@ -14,10 +14,16 @@ namespace BlankProject
         public const string WorkerType = "iOSClient";
 
         [SerializeField] private string ipAddress;
+        [SerializeField] private bool shouldConnectLocally;
 
         private async void Start()
         {
             await Connect(WorkerType, new ForwardingDispatcher()).ConfigureAwait(false);
+        }
+
+        protected override ConnectionService GetConnectionService()
+        {
+            return shouldConnectLocally ? ConnectionService.Receptionist : ConnectionService.AlphaLocator;
         }
 
         protected override void HandleWorkerConnectionEstablished()

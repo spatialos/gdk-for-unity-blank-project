@@ -207,8 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxConnectionAttempts: 3
-  UseExternalIp: 1
+  DevelopmentAuthToken: 
   ipAddress: 
+  shouldConnectLocally: 0
 --- !u!4 &956923360
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Gdk.TransformSynchronization;
@@ -8,9 +8,6 @@ namespace BlankProject
     public class UnityGameLogicConnector : DefaultWorkerConnector
     {
         public const string WorkerType = "UnityGameLogic";
-        
-        private static readonly List<string> AllWorkerAttributes =
-            new List<string> { UnityClientConnector.WorkerType, WorkerType };
         
         private async void Start()
         {
@@ -29,16 +26,16 @@ namespace BlankProject
             var clientAttribute = $"workerId:{workerId}";
             var serverAttribute = WorkerType;
 
-            var entityBuilder = EntityBuilder.Begin()
-                .AddPosition(0, 0, 0, serverAttribute)
-                .AddMetadata("Player", serverAttribute)
-                .SetPersistence(false)
-                .SetReadAcl(AllWorkerAttributes)
-                .SetEntityAclComponentWriteAccess(serverAttribute)
-                .AddPlayerLifecycleComponents(workerId, clientAttribute, serverAttribute)
-                .AddTransformSynchronizationComponents(clientAttribute);
+            var template = new EntityTemplate();
+            template.AddComponent(new Position.Snapshot(), clientAttribute);
+            template.AddComponent(new Metadata.Snapshot { EntityType = "Player" }, serverAttribute);
+            TransformSynchronizationHelper.AddTransformSynchronizationComponents(template, clientAttribute);
+            PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, clientAttribute, serverAttribute);
 
-            return entityBuilder.Build();
+            template.SetReadAccess(UnityClientConnector.WorkerType, AndroidClientWorkerConnector.WorkerType, iOSClientWorkerConnector.WorkerType, serverAttribute);
+            template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
+
+            return template;
         }
     }
 }
