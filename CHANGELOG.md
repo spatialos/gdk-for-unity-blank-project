@@ -6,6 +6,11 @@
 
 - Added support for connecting mobile clients to cloud deployments.
 
+### Changed
+
+- Upgraded the project to be compatible with `2018.3.2f1`.
+
+
 ## `0.1.3` - 2018-11-26
 
 ### Added
