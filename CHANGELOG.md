@@ -2,12 +2,15 @@
 
 ## Unreleased
 
+### Added
+
+- Added support for connecting mobile clients to cloud deployments.
+
 ## `0.1.3` - 2018-11-26
 
 ### Added
 
 - Added a metric sending system for load, FPS and Unity heap usage.
-- Added support for connecting mobile clients to cloud deployments.
 
 ### Changed
 
