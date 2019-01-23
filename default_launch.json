@@ -10,6 +10,25 @@
       "zMeters": 5000
     }
   },
+  "load_balancing": {
+    "layer_configurations": [
+      {
+        "layer": "UnityGameLogic",
+        "points_of_interest": {
+          "num_workers": 1,
+          "points": [
+            {
+              "x": 0,
+              "z": 0
+            }
+          ]
+        },
+        "options": {
+          "manual_worker_connection_only": true
+        }
+      }
+    ]
+  },
   "workers": [
     {
       "worker_type": "UnityGameLogic",
