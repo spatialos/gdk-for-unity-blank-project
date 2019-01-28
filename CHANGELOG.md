@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## `0.1.4` - 2019-01-28
+
 ### Added
 
 - Added support for connecting mobile clients to cloud deployments.
@@ -10,6 +12,7 @@
 
 - Upgraded the project to be compatible with `2018.3.2f1`.
 - Updated all the launch configs to use the new Runtime.
+- Upgraded to GDK for Unity version `0.1.4`.
 
 ## `0.1.3` - 2018-11-26
 
