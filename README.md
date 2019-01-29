@@ -34,4 +34,4 @@ From the root of the `gdk-for-unity-blank-project` repository:
 
    * `git checkout <pinned_version>`
 
-&copy; 2018 Improbable
+&copy; 2019 Improbable
