@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## `0.1.5` - 2019-02-21
+
 ### Changed
 
 - Upgraded the project to be compatible with `2018.3.5f1`.
