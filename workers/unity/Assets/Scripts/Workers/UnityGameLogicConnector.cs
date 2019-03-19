@@ -21,7 +21,7 @@ namespace BlankProject
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
         }
 
-        private static EntityTemplate CreatePlayerEntityTemplate(string workerId, Improbable.Vector3f position)
+        private static EntityTemplate CreatePlayerEntityTemplate(string workerId, byte[] serializedArguments)
         {
             var clientAttribute = $"workerId:{workerId}";
             var serverAttribute = WorkerType;
