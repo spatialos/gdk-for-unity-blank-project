@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## `0.2.0` - 2019-03-19
+
+### Changed
+
+- Updated `BuildConfiguration` asset to work with latest build system changes.
+
 ## `0.1.5` - 2019-02-21
 
 ### Changed
