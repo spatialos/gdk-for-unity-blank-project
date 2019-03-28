@@ -23,14 +23,14 @@ namespace BlankProject
 
         private static EntityTemplate CreatePlayerEntityTemplate(string workerId, byte[] serializedArguments)
         {
-            var clientAttribute = $"workerId:{workerId}";
+            var clientAttribute = EntityTemplate.GetWorkerAccessAttribute(workerId);
             var serverAttribute = WorkerType;
 
             var template = new EntityTemplate();
             template.AddComponent(new Position.Snapshot(), clientAttribute);
-            template.AddComponent(new Metadata.Snapshot { EntityType = "Player" }, serverAttribute);
+            template.AddComponent(new Metadata.Snapshot("Player"), serverAttribute);
             TransformSynchronizationHelper.AddTransformSynchronizationComponents(template, clientAttribute);
-            PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, clientAttribute, serverAttribute);
+            PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, serverAttribute);
 
             template.SetReadAccess(UnityClientConnector.WorkerType, AndroidClientWorkerConnector.WorkerType, iOSClientWorkerConnector.WorkerType, serverAttribute);
             template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);

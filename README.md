@@ -4,7 +4,7 @@ This is a blank project that you can use to build your own game with the [Spatia
 
 ## Prerequisites
 
-Before using this project, make sure to follow the [machine setup guide](https://docs.improbable.io/unity/alpha/content/get-started/set-up#set-up-your-machine).
+Before using this project, make sure to follow the [machine setup guide](https://docs.improbable.io/unity/alpha/machine-setup).
 
 ## Setup
 
