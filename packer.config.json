@@ -1,27 +1,27 @@
 {
-    "package_name": "gdk-for-unity-blank-project",
-    "version": "0.2.0",
-    "git_packages": [
-        {
-            "clone_url": "git@github.com:spatialos/gdk-for-unity-blank-project.git",
-            "clone_dir": "gdk-for-unity-blank-project",
-            "exclude_paths": [
-                ".git",
-                ".github",
-                "ci",
-                "scripts"
-            ]
-        },
-        {
-            "clone_url": "git@github.com:spatialos/gdk-for-unity.git",
-            "clone_dir" : "gdk-for-unity",
-            "exclude_paths": [
-                ".git",
-                ".github",
-                "ci",
-                "scripts",
-                "test-project"
-            ]
-        }
-    ]
+  "PackageName": "gdk-for-unity-blank-project",
+  "Version": "0.2.1",
+  "GitPackages": [
+    {
+      "CloneUrl": "git@github.com:spatialos/gdk-for-unity-blank-project.git",
+      "CloneDir": "gdk-for-unity-blank-project",
+      "ExcludePaths": [
+        ".git",
+        ".github",
+        "ci",
+        "scripts"
+      ]
+    },
+    {
+      "CloneUrl": "git@github.com:spatialos/gdk-for-unity.git",
+      "CloneDir": "gdk-for-unity",
+      "ExcludePaths": [
+        ".git",
+        ".github",
+        "ci",
+        "scripts",
+        "test-project"
+      ]
+    }
+  ]
 }

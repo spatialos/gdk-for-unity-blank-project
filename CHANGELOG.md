@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## `0.2.1` - 2019-04-15
+
 ### Changed
 
 - Updated `CreatePlayerEntityTemplate` to work with latest player lifecycle Feature Module.
