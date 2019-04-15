@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Updated to Unity version `2018.3.11`.
+- Updated to GDK for Unity version `2018.3.11`.
 - Updated `CreatePlayerEntityTemplate` to work with latest player lifecycle Feature Module.
 
 ## `0.2.0` - 2019-03-19
