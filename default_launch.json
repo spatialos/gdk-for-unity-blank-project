@@ -45,6 +45,22 @@
           "all": {}
         }
       ]
+    },
+    {
+      "worker_type": "AndroidClient",
+      "permissions": [
+        {
+          "all": {}
+        }
+      ]
+    },
+    {
+      "worker_type": "iOSClient",
+      "permissions": [
+        {
+          "all": {}
+        }
+      ]
     }
   ]
 }
