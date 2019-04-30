@@ -12,7 +12,7 @@ if [ -d "${SHARED_CI_DIR}" ]; then
     rm -rf "${SHARED_CI_DIR}"
 fi
 
-git clone "${CLONE_URL}" "${SHARED_CI_DIR}"
+git clone --depth 1 --verbose "${CLONE_URL}" "${SHARED_CI_DIR}"
 
 
 # Clone the GDK for Unity repository
