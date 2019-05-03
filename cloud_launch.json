@@ -38,15 +38,7 @@
       ]
     },
     {
-      "worker_type": "AndroidClient",
-      "permissions": [
-        {
-          "all": {}
-        }
-      ]
-    },
-    {
-      "worker_type": "iOSClient",
+      "worker_type": "MobileClient",
       "permissions": [
         {
           "all": {}
