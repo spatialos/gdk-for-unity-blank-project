@@ -4,6 +4,7 @@
 
 ### Breaking Changes
 - Removed the `AndroidClientWorkerConnector` and `iOSClientWorkerConnector` and their specific scenes. You can now use the `MobileClientWorkerConnector` and its `MobileClientScene` to connect to a mobile device.
+- Added the worker type `MobileClient` and removed the worker types `AndroidClient` and `iOSClient`.
 
 ## `0.2.1` - 2019-04-15
 
