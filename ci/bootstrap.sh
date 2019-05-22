@@ -9,13 +9,13 @@ PINNED_SHARED_CI_VERSION=$(cat ./ci/shared-ci.pinned)
 
 # Clone the HEAD of the shared CI repo into ".shared-ci"
 
-if [ -d "${SHARED_CI_DIR}" ]; then
+if [[ -d "${SHARED_CI_DIR}" ]]; then
     rm -rf "${SHARED_CI_DIR}"
 fi
 
 mkdir "${SHARED_CI_DIR}"
 
- # Workaround for being unable to clone a specific commit with depth of 1.
+# Workaround for being unable to clone a specific commit with depth of 1.
 pushd "${SHARED_CI_DIR}"
     git init
     git remote add origin "${CLONE_URL}"
