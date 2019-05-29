@@ -1,6 +1,6 @@
 using Improbable;
 using Improbable.Gdk.Core;
-using Improbable.PlayerLifecycle;
+using Improbable.Gdk.PlayerLifecycle;
 using UnityEngine;
 using Snapshot = Improbable.Gdk.Core.Snapshot;
 
@@ -33,7 +33,7 @@ namespace BlankProject.Editor
         private static void AddPlayerSpawner(Snapshot snapshot)
         {
             var serverAttribute = UnityGameLogicConnector.WorkerType;
-            
+
             var template = new EntityTemplate();
             template.AddComponent(new Position.Snapshot(), serverAttribute);
             template.AddComponent(new Metadata.Snapshot { EntityType = "PlayerCreator" }, serverAttribute);
