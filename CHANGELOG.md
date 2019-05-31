@@ -5,6 +5,7 @@
 ### Changed
 
 - Upgraded the project to be compatible with `2019.1.3f1`.
+- Updated `GdkToolsConfiguration.json` following the [no-more-schema-copying change in the GDK](https://github.com/spatialos/gdk-for-unity/pull/953).
 
 ## `0.2.2` - 2019-05-15
 
