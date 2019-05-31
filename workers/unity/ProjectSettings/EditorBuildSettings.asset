@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameLogicScene.unity
     guid: aaa9e72f9f3224639850bd7b630960be
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MobileClientScene.unity
     guid: 17bd667c9bc89cf4b8c402299c7aa813
