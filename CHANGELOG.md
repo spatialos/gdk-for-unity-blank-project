@@ -5,8 +5,9 @@
 ### Changed
 
 - Upgraded the project to be compatible with `2019.1.3f1`.
-- Updated `GdkToolsConfiguration.json` following the [no-more-schema-copying change in the GDK](https://github.com/spatialos/gdk-for-unity/pull/953).
+- Updated `GdkToolsConfiguration.json` to conform with the [schema copying change in the GDK](https://github.com/spatialos/gdk-for-unity/pull/953).
 - Upgrade to Unity Entities preview.33
+- The `default_launch.json` and `cloud_launch.json` launch configurations now uses the `w2_r0500_e5` template instead of the `small` template which was deprecated.
 
 ## `0.2.2` - 2019-05-15
 
