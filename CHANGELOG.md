@@ -2,12 +2,19 @@
 
 ## Unreleased
 
+## `0.2.3` - 2019-06-12
+
 ### Changed
 
 - Upgraded the project to be compatible with `2019.1.3f1`.
 - Updated `GdkToolsConfiguration.json` to conform with the [schema copying change in the GDK](https://github.com/spatialos/gdk-for-unity/pull/953).
 - Upgrade to Unity Entities preview.33
 - The `default_launch.json` and `cloud_launch.json` launch configurations now uses the `w2_r0500_e5` template instead of the `small` template which was deprecated.
+
+### Internal
+
+- Disabled Burst compilation for all platforms except for iOS, because Burst throws benign errors when building workers for other platforms than the one you are currently using. [#52](https://github.com/spatialos/gdk-for-unity-blank-project/pull/52)
+- Enabled Burst compilation for iOS, because disabling results in an invalid XCode project. [#52](https://github.com/spatialos/gdk-for-unity-blank-project/pull/52)
 
 ## `0.2.2` - 2019-05-15
 
