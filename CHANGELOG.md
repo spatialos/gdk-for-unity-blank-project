@@ -11,6 +11,11 @@
 - Upgrade to Unity Entities preview.33
 - The `default_launch.json` and `cloud_launch.json` launch configurations now uses the `w2_r0500_e5` template instead of the `small` template which was deprecated.
 
+### Internal
+
+- Disabled Burst compilation for all platforms except for iOS, because Burst throws benign errors when building workers for other platforms than the one you are currently using. [#52](https://github.com/spatialos/gdk-for-unity-blank-project/pull/52)
+- Enabled Burst compilation for iOS, because disabling results in an invalid XCode project. [#52](https://github.com/spatialos/gdk-for-unity-blank-project/pull/52)
+
 ## `0.2.2` - 2019-05-15
 
 ### Breaking Changes
