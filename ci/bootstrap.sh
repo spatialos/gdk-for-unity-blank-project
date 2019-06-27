@@ -37,6 +37,6 @@ mkdir "${TARGET_DIRECTORY}"
 pushd "${TARGET_DIRECTORY}"
     git init
     git remote add origin "${CLONE_URI}"
-    git fetch --depth 20 origin feature/worker-wip
+    git fetch --depth 20 origin develop
     git checkout "${PINNED_VERSION}"
 popd
