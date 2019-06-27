@@ -13,7 +13,6 @@ namespace BlankProject
         private async void Start()
         {
             var connParams = CreateConnectionParameters(WorkerType);
-            connParams.Network.UseExternalIp = true;
             connParams.Network.ConnectionType = NetworkConnectionType.Kcp;
 
             var builder = new SpatialOSConnectionHandlerBuilder()
