@@ -9,7 +9,7 @@ namespace BlankProject
     [DisableAutoCreation]
     public class MetricSendSystem : ComponentSystem
     {
-        private Connection connection;
+        private WorkerSystem worker;
 
         private DateTime timeOfNextUpdate;
         private DateTime timeOfLastUpdate;
@@ -32,7 +32,7 @@ namespace BlankProject
         protected override void OnCreate()
         {
             base.OnCreate();
-            connection = World.GetExistingSystem<WorkerSystem>().Connection;
+            worker = World.GetExistingSystem<WorkerSystem>();
 
             targetFps = Application.targetFrameRate == -1
                 ? DefaultTargetFrameRate
@@ -47,7 +47,7 @@ namespace BlankProject
 
         protected override void OnUpdate()
         {
-            if (connection == null)
+            if (worker == null)
             {
                 return;
             }
@@ -59,7 +59,7 @@ namespace BlankProject
                 WorkerMetrics.GaugeMetrics["Unity used heap size"] = GC.GetTotalMemory(false);
                 WorkerMetrics.Load = CalculateLoad();
 
-                connection.SendMetrics(WorkerMetrics);
+                worker.SendMetrics(WorkerMetrics);
 
                 timeOfLastUpdate = DateTime.Now;
                 timeOfNextUpdate = timeOfLastUpdate.AddSeconds(TimeBetweenMetricUpdatesSecs);
