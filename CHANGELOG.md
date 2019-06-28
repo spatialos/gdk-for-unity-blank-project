@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## `0.2.4` - 2019-06-28
+
 ### Changed
 
 - Upgraded project to the new worker abstraction. [#56](https://github.com/spatialos/gdk-for-unity-blank-project/pull/56)
