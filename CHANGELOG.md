@@ -11,6 +11,7 @@
 ### Changed
 
 - Upgraded project to the new worker abstraction. [#56](https://github.com/spatialos/gdk-for-unity-blank-project/pull/56)
+- Changed manifest to use GDK Packages with NPM instead of sideloading.
 
 ## `0.2.3` - 2019-06-12
 
