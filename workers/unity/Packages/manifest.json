@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "com.improbable.gdk.buildsystem": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.buildsystem",
-    "com.improbable.gdk.core": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.core",
-    "com.improbable.gdk.deploymentlauncher": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.deploymentlauncher",
-    "com.improbable.gdk.gameobjectcreation": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.gameobjectcreation",
-    "com.improbable.gdk.mobile": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.mobile",
-    "com.improbable.gdk.playerlifecycle": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.playerlifecycle",
-    "com.improbable.gdk.testutils": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.testutils",
-    "com.improbable.gdk.tools": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.tools",
-    "com.improbable.gdk.transformsynchronization": "file:../../../../gdk-for-unity/workers/unity/Packages/com.improbable.gdk.transformsynchronization",
+    "io.improbable.gdk.buildsystem": "0.2.4",
+    "io.improbable.gdk.core": "0.2.4",
+    "io.improbable.gdk.deploymentlauncher": "0.2.4",
+    "io.improbable.gdk.gameobjectcreation": "0.2.4",
+    "io.improbable.gdk.mobile": "0.0.8",
+    "io.improbable.gdk.playerlifecycle": "0.2.4",
+    "io.improbable.gdk.testutils": "0.2.4",
+    "io.improbable.gdk.tools": "0.2.4",
+    "io.improbable.gdk.transformsynchronization": "0.2.4",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.2",
     "com.unity.package-manager-ui": "2.1.2",
@@ -47,5 +47,14 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   },
-  "registry": "https://staging-packages.unity.com"
+  "registry": "https://staging-packages.unity.com",
+  "scopedRegistries": [
+    {
+      "name": "Improbable",
+      "url": "https://npm.improbable.io/gdk-for-unity/",
+      "scopes": [
+        "io.improbable"
+      ]
+    }
+  ]
 }
