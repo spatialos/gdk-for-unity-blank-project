@@ -1,7 +1,31 @@
 #!/usr/bin/env bash
 set -e -u -x -o pipefail
 
+function isLinux() {
+  [[ "$(uname -s)" == "Linux" ]];
+}
+
+function isMacOS() {
+  [[ "$(uname -s)" == "Darwin" ]];
+}
+
+function isWindows() {
+  ! ( isLinux || isMacOS );
+}
+
 cd "$(dirname "$0")/../"
+
+EXTRA_ARGS=""
+
+if isWindows; then
+    if [[ -z ${BUILDKITE:-} ]]; then
+        echo "Cannot run bootstrap.sh on Windows machines (without copying). Invoking the powershell one.."
+        powershell ./ci/bootstrap.ps1
+        exit 0
+    else
+        EXTRA_ARGS="--copy"
+    fi
+fi
 
 SHARED_CI_DIR="$(pwd)/.shared-ci"
 CLONE_URL="git@github.com:spatialos/gdk-for-unity-shared-ci.git"
@@ -29,6 +53,17 @@ CLONE_URI="git@github.com:spatialos/gdk-for-unity.git"
 TARGET_DIRECTORY="$(realpath $(pwd)/../gdk-for-unity)"
 PINNED_VERSION=$(cat ./gdk.pinned)
 
+if [[ -z ${BUILDKITE:-} ]]; then
+    echo "Warning: About to delete ${TARGET_DIRECTORY}. Please confirm. (Default is Cancel)"
+    read -p "Y/N > " -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "Deleting..."
+    else
+        exit 1
+    fi
+fi
+
 rm -rf "${TARGET_DIRECTORY}"
 
 mkdir "${TARGET_DIRECTORY}"
@@ -37,6 +72,11 @@ mkdir "${TARGET_DIRECTORY}"
 pushd "${TARGET_DIRECTORY}"
     git init
     git remote add origin "${CLONE_URI}"
-    git fetch --depth 20 origin develop
+    git fetch --depth 20 origin feature/npm-test
     git checkout "${PINNED_VERSION}"
+    ./init.sh
 popd
+
+dotnet run -p ./.shared-ci/tools/PackageSymLinker/PackageSymLinker.csproj -- \
+    --packages-source-dir "${TARGET_DIRECTORY}/workers/unity/Packages" \
+    --package-target-dir "$(pwd)/workers/unity/Packages" "${EXTRA_ARGS}"
