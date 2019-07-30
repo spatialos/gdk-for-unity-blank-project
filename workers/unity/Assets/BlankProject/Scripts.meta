@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:workers/unity/Assets/BlankProject/Scripts.meta
 guid: f7d2ac63e1fe62c49ae8544cffca611c
+=======
+guid: 7081979fcf59c6841b667efbd4abb2a7
+>>>>>>> Episode 1: Intro to Blank Project:workers/unity/Assets/BlankProject.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
