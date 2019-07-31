@@ -34,6 +34,9 @@ namespace BlankProject.Editor
             var snapshot = new Snapshot();
 
             AddPlayerSpawner(snapshot);
+
+            AddSpheres(snapshot);
+
             return snapshot;
         }
 
@@ -53,6 +56,21 @@ namespace BlankProject.Editor
                 MobileClientWorkerConnector.WorkerType);
             template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
 
+            snapshot.AddEntity(template);
+        }
+
+        private static void AddSpheres(Snapshot snapshot)
+        {
+            var template = EntityTemplates.CreateSphereTemplate(Vector3.zero);
+
+            AddSphere(template, snapshot, new Vector3(-10f, 0.5f, 10f));
+            AddSphere(template, snapshot, new Vector3(10f, 5f, 10f));
+            AddSphere(template, snapshot, new Vector3(25f, 0.5f, 0f));
+        }
+
+        private static void AddSphere(EntityTemplate template, Snapshot snapshot, Vector3 position)
+        {
+            template.SetComponent(new Position.Snapshot(Coordinates.FromUnityVector(position)));
             snapshot.AddEntity(template);
         }
     }
