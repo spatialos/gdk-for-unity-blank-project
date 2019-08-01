@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1.1
+  bundleVersion: 0.2.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -637,9 +637,9 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: DISABLE_REACTIVE_COMPONENTS
-    4: DISABLE_REACTIVE_COMPONENTS
-    7: DISABLE_REACTIVE_COMPONENTS
+    1: 
+    4: 
+    7: 
   platformArchitecture: {}
   scriptingBackend:
     Android: 0
