@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- Added the `io.improbable.gdk.debug` package as a dependency. [#66](https://github.com/spatialos/gdk-for-unity-blank-project/pull/66)
+
 ## `0.2.5` - 2019-07-18
 
 ### Changed

@@ -2,6 +2,7 @@
   "dependencies": {
     "io.improbable.gdk.buildsystem": "0.2.5",
     "io.improbable.gdk.core": "0.2.5",
+    "io.improbable.gdk.debug": "0.2.5",
     "io.improbable.gdk.deploymentlauncher": "0.2.5",
     "io.improbable.gdk.gameobjectcreation": "0.2.5",
     "io.improbable.gdk.mobile": "0.2.5",
