@@ -8,7 +8,8 @@
         "Unity.Entities",
         "Unity.Entities.Hybrid",
         "Unity.Mathematics",
-        "Improbable.Gdk.GameObjectCreation"
+        "Improbable.Gdk.GameObjectCreation",
+        "Improbable.Gdk.TransformSynchronization"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

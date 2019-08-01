@@ -61,17 +61,14 @@ namespace BlankProject.Editor
 
         private static void AddSpheres(Snapshot snapshot)
         {
-            var template = EntityTemplates.CreateSphereTemplate(Vector3.zero);
-
-            AddSphere(template, snapshot, new Vector3(-10f, 0.5f, 10f));
-            AddSphere(template, snapshot, new Vector3(10f, 5f, 10f));
-            AddSphere(template, snapshot, new Vector3(25f, 0.5f, 0f));
+            AddSphere(snapshot, new Vector3(-10f, 0.5f, 10f));
+            AddSphere(snapshot, new Vector3(10f, 5f, 10f));
+            AddSphere(snapshot, new Vector3(25f, 0.5f, 0f));
         }
 
-        private static void AddSphere(EntityTemplate template, Snapshot snapshot, Vector3 position)
+        private static void AddSphere(Snapshot snapshot, Vector3 position)
         {
-            template.SetComponent(new Position.Snapshot(Coordinates.FromUnityVector(position)));
-            snapshot.AddEntity(template);
+            snapshot.AddEntity(EntityTemplates.CreateSphereTemplate(position));
         }
     }
 }

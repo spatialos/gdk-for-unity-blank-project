@@ -1,10 +1,15 @@
 using System;
+using Improbable;
+using Improbable.Gdk.Subscriptions;
 using UnityEngine;
 
 namespace Scripts.Camera
 {
     public class FollowPlayerCamera : MonoBehaviour
     {
+        //for authority
+        [Require] private PositionWriter positionWriter;
+
         // The min/max distance from camera to the player.
         private const float MinCameraDistance = 2.0f;
         private const float MaxCameraDistance = 10.0f;
@@ -39,7 +44,7 @@ namespace Scripts.Camera
             Cursor.lockState = CursorLockMode.None;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             UpdateCameraInput();
             UpdateCameraTransform(transform.position);

@@ -26,7 +26,7 @@ namespace Scripts.Player
             var randomPosition = new Vector3
             {
                 x = Random.Range(-50f, 50f),
-                y = Random.Range(0.5f, 5f),
+                y = Random.Range(5f, 20f),
                 z = Random.Range(-50f, 50f)
             };
 

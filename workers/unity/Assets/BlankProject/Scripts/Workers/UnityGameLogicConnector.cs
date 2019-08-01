@@ -1,6 +1,7 @@
 ﻿using Improbable.Gdk.Core;
 using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Gdk.TransformSynchronization;
 using Improbable.Worker.CInterop;
 using UnityEngine;
 
@@ -44,7 +45,9 @@ namespace BlankProject
         {
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
-            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World);
+            var transformGameObjectCreator = new GameObjectCreatorFromTransform(WorkerType, transform.position);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, transformGameObjectCreator);
+            TransformSynchronizationHelper.AddServerSystems(Worker.World);
 
             if (level == null)
             {
