@@ -36,6 +36,7 @@ namespace BlankProject
             template.AddComponent(new Position.Snapshot(Coordinates.FromUnityVector(position)), serverAttribute);
             template.AddComponent(new Metadata.Snapshot("Sphere"), serverAttribute);
             template.AddComponent(new Persistence.Snapshot(), serverAttribute);
+            template.AddComponent(new Health.Snapshot(GameConstants.MaxHealth), serverAttribute);
 
             TransformSynchronizationHelper.AddTransformSynchronizationComponents(template, serverAttribute, position);
 

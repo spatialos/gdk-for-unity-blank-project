@@ -1,0 +1,8 @@
+package blank_project;
+
+component Health
+{
+    id = 13131;
+
+    int32 health = 1;
+}

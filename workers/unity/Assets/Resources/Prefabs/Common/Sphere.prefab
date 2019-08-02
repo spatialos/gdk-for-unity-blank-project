@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 7721103899027807903}
   - component: {fileID: 3082128946925052820}
   - component: {fileID: -7041714847426456993}
+  - component: {fileID: -1493365688899917443}
+  - component: {fileID: -4118948207885227437}
+  - component: {fileID: 932099818172995640}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -123,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d8c22c9eff4ef0ac18c94eb489f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcePerPush: 100
+  forcePerPush: 250
   pushInterval: 5
 --- !u!114 &3082128946925052820
 MonoBehaviour:
@@ -155,4 +158,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc514669c39940d6835ae0668e40f09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.049928807, g: 0.6226415, b: 0.07375925, a: 0}
+  color: {r: 0.653998, g: 0.07863116, b: 0.8773585, a: 0}
+--- !u!114 &-1493365688899917443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934688853016739038}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb7e193486844f485e05f6b86fc5c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  healthReductionInterval: 5
+--- !u!114 &-4118948207885227437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934688853016739038}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0cda16fd2442259c0fabdeaac0986e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &932099818172995640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934688853016739038}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1b3630cbb04f24b7095ef346eb0a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarPrefab: {fileID: 3432774984740148964, guid: e2bd189f60819f94099f27e29f8f9219,
+    type: 3}
