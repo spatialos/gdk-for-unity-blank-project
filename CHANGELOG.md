@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## `0.2.6` - 2019-08-05
+
+### Changed
+- Upgraded to GDK for Unity version `0.2.6`
+
 ### Added
 
 - Added the `io.improbable.gdk.debug` package as a dependency. [#66](https://github.com/spatialos/gdk-for-unity-blank-project/pull/66)
