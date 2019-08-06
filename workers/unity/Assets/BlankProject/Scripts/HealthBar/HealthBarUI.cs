@@ -20,11 +20,11 @@ namespace Scripts.HealthBar
             mainCamera = UnityEngine.Camera.main;
         }
 
-        public void ModifyHealth(int newHealth)
+        public void VisualiseHealth(int health)
         {
             greenRectTransform.sizeDelta = new Vector2
             {
-                x = newHealth * maxWidth / GameConstants.MaxHealth,
+                x = health * maxWidth / GameConstants.MaxHealth,
                 y = greenRectTransform.sizeDelta.y,
             };
         }

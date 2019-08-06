@@ -1,4 +1,3 @@
-using System;
 using Improbable;
 using Improbable.Gdk.Subscriptions;
 using UnityEngine;
@@ -16,7 +15,7 @@ namespace Scripts.Camera
         private const float ZoomScale = 10.0f;
 
         // The min/max vertical angles for the camera (so you can't clip through the floor).
-        private const float MinYAngle = 10.0f;
+        private const float MinYAngle = 0.0f;
         private const float MaxYAngle = 80.0f;
 
         // Origin offset to make camera orbit character's head rather than their feet.
@@ -37,11 +36,7 @@ namespace Scripts.Camera
 
             mainCameraTransform = UnityEngine.Camera.main.transform;
             Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        private void OnDisable()
-        {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
         }
 
         private void LateUpdate()

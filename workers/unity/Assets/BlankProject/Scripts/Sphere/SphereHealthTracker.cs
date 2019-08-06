@@ -17,9 +17,11 @@ namespace Scripts.Sphere
         private void OnEnable()
         {
             healthBar = Instantiate(healthBarPrefab, transform).GetComponent<HealthBarUI>();
-            healthBar.ModifyHealth(healthReader.Data.Health);
+        }
 
-            healthReader.OnHealthUpdate += healthBar.ModifyHealth;
+        private void Update()
+        {
+            healthBar.VisualiseHealth(healthReader.Data.Health);
         }
     }
 }

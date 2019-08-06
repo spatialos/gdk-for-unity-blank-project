@@ -13,7 +13,7 @@ namespace Scripts.Sphere
         [Require] private PositionWriter positionWriter;
 
         public float forcePerPush = 250f;
-        public float pushInterval = 5f;
+        public float pushInterval = 2f;
 
         private Rigidbody rigidbody;
         private Vector3 workerOrigin;

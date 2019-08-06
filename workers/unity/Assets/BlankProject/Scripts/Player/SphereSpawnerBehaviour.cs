@@ -1,5 +1,6 @@
 using System;
 using BlankProject;
+using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.Core.Commands;
 using Improbable.Gdk.Subscriptions;
@@ -11,6 +12,8 @@ namespace Scripts.Player
     [WorkerType(UnityClientConnector.WorkerType)]
     public class SphereSpawnerBehaviour : MonoBehaviour
     {
+        // authoritative player
+        [Require] private PositionWriter positionWriter;
         [Require] private WorldCommandSender worldCommandSender;
 
         private void Update()

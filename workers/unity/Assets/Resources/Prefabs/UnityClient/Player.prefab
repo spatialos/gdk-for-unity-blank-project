@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7470069047240434508}
   - component: {fileID: 6827835328915665169}
   - component: {fileID: 3589835519189077516}
+  - component: {fileID: 3574480850111282579}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -149,3 +150,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.7264151, g: 0.07195621, b: 0.10779936, a: 0}
+--- !u!114 &3574480850111282579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803315048137889968}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e951b35c379943c9b8e6557f118043e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crosshairPrefab: {fileID: 6461673268709195864, guid: fdb01ea5af5332d4991e1bf25a590d7d,
+    type: 3}

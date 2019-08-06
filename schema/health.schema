@@ -1,8 +1,16 @@
 package blank_project;
 
+type HealRequest {
+    int32 heal_amount = 1;
+}
+
+type HealResponse {}
+
 component Health
 {
     id = 13131;
 
     int32 health = 1;
+
+    command HealResponse heal(HealRequest);
 }
