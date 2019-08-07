@@ -16,7 +16,10 @@ namespace Scripts.Sphere
 
         private void OnEnable()
         {
-            healthBar = Instantiate(healthBarPrefab, transform).GetComponent<HealthBarUI>();
+            if (healthBar == null)
+            {
+                healthBar = Instantiate(healthBarPrefab, transform).GetComponent<HealthBarUI>();
+            }
         }
 
         private void Update()

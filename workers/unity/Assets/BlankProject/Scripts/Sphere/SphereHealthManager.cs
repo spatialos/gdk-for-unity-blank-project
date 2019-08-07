@@ -3,12 +3,11 @@ using System.Collections;
 using BlankProject;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.Subscriptions;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Scripts.Sphere
 {
-    public class SphereHealthReducer : MonoBehaviour
+    public class SphereHealthManager : MonoBehaviour
     {
         [Require] private HealthWriter healthWriter;
 
@@ -33,8 +32,20 @@ namespace Scripts.Sphere
                 health = healthWriter.Data.Health;
             }
 
+            if (health >= GameConstants.MaxHealth)
+            {
+                return;
+            }
+
             health += obj.Payload.HealAmount;
             healthToSend = Math.Min(health, GameConstants.MaxHealth);
+
+            healthWriter.SendHealedEvent(new HealInfo
+            {
+                HealType = healthToSend == GameConstants.MaxHealth
+                    ? HealType.FULL
+                    : HealType.PARTIAL
+            });
         }
 
         private void OnDisable()

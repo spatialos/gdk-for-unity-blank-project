@@ -6,6 +6,15 @@ type HealRequest {
 
 type HealResponse {}
 
+enum HealType {
+    PARTIAL = 0;
+    FULL = 1;
+}
+
+type HealInfo {
+    HealType heal_type = 1;
+}
+
 component Health
 {
     id = 13131;
@@ -13,4 +22,6 @@ component Health
     int32 health = 1;
 
     command HealResponse heal(HealRequest);
+
+    event HealInfo healed;
 }
