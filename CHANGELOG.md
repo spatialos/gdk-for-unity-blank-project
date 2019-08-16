@@ -2,10 +2,26 @@
 
 ## Unreleased
 
+### Breaking changes
+
+- Tidied up the project structure. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
+    - Moved `CreatePlayerEntityTemplate` to the new `EntityTemplates` static class.
+    - Removed `Improbable.Gdk.TransformSynchronization` from the assembly definition.
+
+### Added
+
+- Created prefabs for `UnityClient`, `UnityGameLogic` and `MobileClient` workers under `Resources/Prefabs/Worker`. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
+- Created a new `EntityTemplates` static class. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
+
+### Changed
+
+- The **SpatialOS** > **Generate snapshot** button now generates a snapshot directly without displaying a pop-up window. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
+
 ## `0.2.6` - 2019-08-05
 
 ### Changed
-- Upgraded to GDK for Unity version `0.2.6`
+
+- Upgraded to GDK for Unity version `0.2.6`.
 
 ### Added
 
