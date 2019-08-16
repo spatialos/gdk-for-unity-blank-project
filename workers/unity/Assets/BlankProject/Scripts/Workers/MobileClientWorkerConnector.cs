@@ -32,8 +32,8 @@ namespace BlankProject
                     builder.SetConnectionFlow(new ReceptionistFlow(CreateNewWorkerId(WorkerType),
                         flowInitializer));
                     break;
-                case ConnectionService.AlphaLocator:
-                    builder.SetConnectionFlow(new AlphaLocatorFlow(flowInitializer));
+                case ConnectionService.Locator:
+                    builder.SetConnectionFlow(new LocatorFlow(flowInitializer));
                     break;
                 default:
                     throw new ArgumentException("Received unsupported connection service.");
