@@ -1,6 +1,8 @@
+using System.IO;
 using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
+using UnityEditor;
 using UnityEngine;
 using Snapshot = Improbable.Gdk.Core.Snapshot;
 
@@ -8,18 +10,23 @@ namespace BlankProject.Editor
 {
     internal static class SnapshotGenerator
     {
-        public struct Arguments
-        {
-            public string OutputPath;
-        }
+        private static string DefaultSnapshotPath = Path.GetFullPath(
+            Path.Combine(
+                Application.dataPath,
+                "..",
+                "..",
+                "..",
+                "snapshots",
+                "default.snapshot"));
 
-        public static void Generate(Arguments arguments)
+        [MenuItem("SpatialOS/Generate snapshot")]
+        public static void Generate()
         {
             Debug.Log("Generating snapshot.");
             var snapshot = CreateSnapshot();
 
-            Debug.Log($"Writing snapshot to: {arguments.OutputPath}");
-            snapshot.WriteToFile(arguments.OutputPath);
+            Debug.Log($"Writing snapshot to: {DefaultSnapshotPath}");
+            snapshot.WriteToFile(DefaultSnapshotPath);
         }
 
         private static Snapshot CreateSnapshot()
@@ -36,11 +43,14 @@ namespace BlankProject.Editor
 
             var template = new EntityTemplate();
             template.AddComponent(new Position.Snapshot(), serverAttribute);
-            template.AddComponent(new Metadata.Snapshot { EntityType = "PlayerCreator" }, serverAttribute);
+            template.AddComponent(new Metadata.Snapshot("PlayerCreator"), serverAttribute);
             template.AddComponent(new Persistence.Snapshot(), serverAttribute);
             template.AddComponent(new PlayerCreator.Snapshot(), serverAttribute);
 
-            template.SetReadAccess(UnityClientConnector.WorkerType, UnityGameLogicConnector.WorkerType, MobileClientWorkerConnector.WorkerType);
+            template.SetReadAccess(
+                UnityClientConnector.WorkerType,
+                UnityGameLogicConnector.WorkerType,
+                MobileClientWorkerConnector.WorkerType);
             template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
 
             snapshot.AddEntity(template);
