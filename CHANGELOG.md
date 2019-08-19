@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## `0.2.7` - 2019-08-19
+
 ### Breaking changes
 
 - Tidied up the project structure. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
@@ -15,6 +17,7 @@
 
 ### Changed
 
+- Upgraded to GDK for Unity version `0.2.7`
 - The **SpatialOS** > **Generate snapshot** button now generates a snapshot directly without displaying a pop-up window. [#68](https://github.com/spatialos/gdk-for-unity-blank-project/pull/68)
 
 ### Internal
