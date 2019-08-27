@@ -1,5 +1,15 @@
 {
   "dependencies": {
+    "com.unity.ads": "2.0.8",
+    "com.unity.analytics": "3.3.2",
+    "com.unity.ide.rider": "1.0.8",
+    "com.unity.package-manager-ui": "2.2.0",
+    "com.unity.purchasing": "2.0.6",
+    "com.unity.test-framework": "1.0.13",
+    "com.unity.textmeshpro": "2.0.1",
+    "com.unity.timeline": "1.1.0",
+    "com.unity.ugui": "1.0.0",
+    "com.unity.xr.legacyinputhelpers": "2.0.2",
     "io.improbable.gdk.buildsystem": "0.2.7",
     "io.improbable.gdk.core": "0.2.7",
     "io.improbable.gdk.debug": "0.2.7",
@@ -10,13 +20,6 @@
     "io.improbable.gdk.testutils": "0.2.7",
     "io.improbable.gdk.tools": "0.2.7",
     "io.improbable.gdk.transformsynchronization": "0.2.7",
-    "com.unity.ads": "2.0.8",
-    "com.unity.analytics": "3.3.2",
-    "com.unity.package-manager-ui": "2.1.2",
-    "com.unity.purchasing": "2.0.6",
-    "com.unity.textmeshpro": "2.0.0",
-    "com.unity.timeline": "1.0.0",
-    "com.unity.xr.legacyinputhelpers": "2.0.2",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.assetbundle": "1.0.0",
@@ -48,7 +51,7 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   },
-  "registry": "https://staging-packages.unity.com",
+  "registry": "https://packages.unity.com",
   "scopedRegistries": [
     {
       "name": "Improbable",
