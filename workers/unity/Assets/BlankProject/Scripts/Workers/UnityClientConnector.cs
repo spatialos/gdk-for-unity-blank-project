@@ -1,7 +1,6 @@
 ﻿using System;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
-using Improbable.Worker.CInterop;
 using UnityEngine;
 
 namespace BlankProject
@@ -13,7 +12,6 @@ namespace BlankProject
         private async void Start()
         {
             var connParams = CreateConnectionParameters(WorkerType);
-            connParams.Network.ConnectionType = NetworkConnectionType.Kcp;
 
             var builder = new SpatialOSConnectionHandlerBuilder()
                 .SetConnectionParameters(connParams);
