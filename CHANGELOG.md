@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Changed the default client network connection type from KCP to Modular UDP with compression enabled.
+- Changed the default client network connection type from KCP to Modular UDP with compression enabled. [#77](https://github.com/spatialos/gdk-for-unity-blank-project/pull/77)
 
 ## `0.2.10` - 2019-10-15
 
