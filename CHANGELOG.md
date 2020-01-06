@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Updated the project app identifiers to `io.improbable.gdk.blankproject`. [#81](https://github.com/spatialos/gdk-for-unity-blank-project/pull/81)
+
 ## `0.3.2` - 2019-12-23
 
 ### Changed
