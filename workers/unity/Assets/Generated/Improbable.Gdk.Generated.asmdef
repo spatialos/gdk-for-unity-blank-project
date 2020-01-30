@@ -1,6 +1,6 @@
 {
     "name": "Improbable.Gdk.Generated",
-    "references": [ 
+    "references": [
         "Improbable.Gdk.Core",
         "Unity.Collections",
         "Unity.Entities",
@@ -9,5 +9,10 @@
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": false
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }
