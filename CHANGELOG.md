@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+## `0.3.3` - 2020-02-14
+
 ### Changed
 
+- Upgraded to GDK for Unity version `0.3.3`
 - Updated the project app identifiers to `io.improbable.gdk.blankproject`. [#81](https://github.com/spatialos/gdk-for-unity-blank-project/pull/81)
 
 ## `0.3.2` - 2019-12-23
