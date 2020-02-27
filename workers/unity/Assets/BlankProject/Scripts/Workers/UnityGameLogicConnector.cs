@@ -1,4 +1,4 @@
-﻿using BlankProject.Scripts.Config;
+using BlankProject.Scripts.Config;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Worker.CInterop;
