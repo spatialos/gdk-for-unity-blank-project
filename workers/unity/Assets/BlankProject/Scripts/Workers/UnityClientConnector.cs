@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using UnityEngine;
