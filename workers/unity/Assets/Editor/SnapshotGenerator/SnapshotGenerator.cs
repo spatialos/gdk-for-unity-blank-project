@@ -2,8 +2,10 @@ using System.IO;
 using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Gdk.QueryBasedInterest;
 using UnityEditor;
 using UnityEngine;
+
 using Snapshot = Improbable.Gdk.Core.Snapshot;
 
 namespace BlankProject.Editor
@@ -46,6 +48,11 @@ namespace BlankProject.Editor
             template.AddComponent(new Metadata.Snapshot("PlayerCreator"), serverAttribute);
             template.AddComponent(new Persistence.Snapshot(), serverAttribute);
             template.AddComponent(new PlayerCreator.Snapshot(), serverAttribute);
+
+            var query = InterestQuery.Query(Constraint.RelativeCylinder(500));
+            var interest = InterestTemplate.Create()
+                .AddQueries<Position.Component>(query);
+            template.AddComponent(interest.ToSnapshot(), serverAttribute);
 
             template.SetReadAccess(
                 UnityClientConnector.WorkerType,

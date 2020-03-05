@@ -7,9 +7,9 @@
         "Improbable.Gdk.PlayerLifecycle",
         "Unity.Entities",
         "Unity.Entities.Hybrid",
-        "Unity.Mathematics"
+        "Unity.Mathematics",
+        "Improbable.Gdk.QueryBasedInterestHelper"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
