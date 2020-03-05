@@ -4,7 +4,7 @@
 
 ### Breaking Changes
 
-- The blank project now uses [query-based interest](https://docs.improbable.io/reference/14.4/shared/authority-and-interest/interest/query-based-interest-qbi) instead of [chunk-based interest](https://docs.improbable.io/reference/14.4/shared/authority-and-interest/interest/chunk-based-interest-cbi).
+- The blank project now uses [query-based interest](https://docs.improbable.io/reference/14.4/shared/authority-and-interest/interest/query-based-interest-qbi) instead of [chunk-based interest](https://docs.improbable.io/reference/14.4/shared/authority-and-interest/interest/chunk-based-interest-cbi). [#89](https://github.com/spatialos/gdk-for-unity-blank-project/pull/89)
 
 ## `0.3.3` - 2020-02-14
 
