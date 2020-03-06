@@ -5,8 +5,8 @@
         "Improbable.Gdk.BuildSystem",
         "Improbable.Gdk.Core",
         "Improbable.Gdk.Generated",
-        "Improbable.Gdk.QueryBasedInterestHelper"
-        "Unity.Entities",
+        "Improbable.Gdk.QueryBasedInterestHelper",
+        "Unity.Entities"
     ],
     "includePlatforms": [
         "Editor"
