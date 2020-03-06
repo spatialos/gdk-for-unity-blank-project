@@ -15,6 +15,7 @@
     "io.improbable.gdk.debug": "0.3.3",
     "io.improbable.gdk.deploymentlauncher": "0.3.3",
     "io.improbable.gdk.gameobjectcreation": "0.3.3",
+    "io.improbable.gdk.querybasedinteresthelper": "0.3.3",
     "io.improbable.gdk.mobile": "0.3.3",
     "io.improbable.gdk.playerlifecycle": "0.3.3",
     "io.improbable.gdk.testutils": "0.3.3",

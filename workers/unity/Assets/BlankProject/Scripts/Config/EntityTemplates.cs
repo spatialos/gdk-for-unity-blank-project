@@ -1,6 +1,7 @@
 using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Gdk.QueryBasedInterest;
 
 namespace BlankProject.Scripts.Config
 {
@@ -16,6 +17,17 @@ namespace BlankProject.Scripts.Config
             template.AddComponent(new Metadata.Snapshot("Player"), serverAttribute);
 
             PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, serverAttribute);
+
+            const int serverRadius = 500;
+            var clientRadius = workerId.Contains(MobileClientWorkerConnector.WorkerType) ? 100 : 500;
+
+            var serverQuery = InterestQuery.Query(Constraint.RelativeCylinder(serverRadius));
+            var clientQuery = InterestQuery.Query(Constraint.RelativeCylinder(clientRadius));
+
+            var interest = InterestTemplate.Create()
+                .AddQueries<Metadata.Component>(serverQuery)
+                .AddQueries<Position.Component>(clientQuery);
+            template.AddComponent(interest.ToSnapshot(), serverAttribute);
 
             template.SetReadAccess(UnityClientConnector.WorkerType, MobileClientWorkerConnector.WorkerType, serverAttribute);
             template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);

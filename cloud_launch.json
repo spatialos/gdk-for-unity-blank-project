@@ -8,14 +8,21 @@
     "dimensions": {
       "xMeters": 5000,
       "zMeters": 5000
-    }
+    },
+    "legacy_flags": [
+      {
+        "name": "interest_queries_components_are_filtered_by_component_delivery",
+        "value": "false"
+      }
+    ]
   },
   "load_balancing": {
     "layer_configurations": [
       {
         "layer": "UnityGameLogic",
-        "hex_grid": {
-          "num_workers": 2
+        "rectangle_grid": {
+          "cols": 2,
+          "rows": 1
         }
       }
     ]
