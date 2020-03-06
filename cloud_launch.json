@@ -20,8 +20,9 @@
     "layer_configurations": [
       {
         "layer": "UnityGameLogic",
-        "hex_grid": {
-          "num_workers": 2
+        "rectangle_grid": {
+          "cols": 2,
+          "rows": 1
         }
       }
     ]
