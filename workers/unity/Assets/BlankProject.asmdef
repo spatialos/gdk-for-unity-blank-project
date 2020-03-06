@@ -5,10 +5,10 @@
         "Improbable.Gdk.Generated",
         "Improbable.Gdk.Mobile",
         "Improbable.Gdk.PlayerLifecycle",
+        "Improbable.Gdk.QueryBasedInterestHelper",
         "Unity.Entities",
         "Unity.Entities.Hybrid",
-        "Unity.Mathematics",
-        "Improbable.Gdk.QueryBasedInterestHelper"
+        "Unity.Mathematics"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
