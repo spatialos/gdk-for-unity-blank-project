@@ -7,7 +7,7 @@ namespace BlankProject.Scripts.Config
 {
     public static class EntityTemplates
     {
-        public static EntityTemplate CreatePlayerEntityTemplate(string workerId, byte[] serializedArguments)
+        public static EntityTemplate CreatePlayerEntityTemplate(EntityId entityId, string workerId, byte[] serializedArguments)
         {
             var clientAttribute = EntityTemplate.GetWorkerAccessAttribute(workerId);
             var serverAttribute = UnityGameLogicConnector.WorkerType;
