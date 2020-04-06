@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Upgraded Unity entities package to `0.7.0`. [#97](https://github.com/spatialos/gdk-for-unity-blank-project/pull/97)
+
 ### Breaking Changes
 
 - The Blank Project now requires Unity 2019.3. [#96](https://github.com/spatialos/gdk-for-unity-blank-project/pull/96)
