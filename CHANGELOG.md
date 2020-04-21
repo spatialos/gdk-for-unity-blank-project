@@ -8,7 +8,7 @@
 
 ### Changed
 
-- Upgraded Unity entities package to `0.7.0`. [#97](https://github.com/spatialos/gdk-for-unity-blank-project/pull/97)
+- Upgraded Unity entities package to `0.9.1`. [#99](https://github.com/spatialos/gdk-for-unity-blank-project/pull/99)
 
 ## `0.3.4` - 2020-03-25
 
