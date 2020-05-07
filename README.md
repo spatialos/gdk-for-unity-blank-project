@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="./.github/readme-header.png" width="450" />
+
   <h1>The GDK for Unity Blank Project</h1>
 
   <p>
