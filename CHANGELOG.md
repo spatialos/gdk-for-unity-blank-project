@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## `0.3.6` - 2020-05-26
+
+### Changed
+
+- Upgraded to GDK for Unity version `0.3.6`
 ## `0.3.5` - 2020-04-23
 
 ### Breaking Changes
