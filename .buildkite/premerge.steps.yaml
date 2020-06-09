@@ -33,21 +33,21 @@ windows: &windows
   env: &windows-env
     ACCELERATOR_ENDPOINT: "unity-accelerator.production-intinf-eu1.i8e.io"
 
-macos: &macos
-  agents:
-    - "capable_of_building=gdk-for-unity"
-    - "environment=production"
-    - "permission_set=builder"
-    - "platform=macos"
-    - "queue=${DARWIN_BUILDER_QUEUE:-v4-1582049359-33db24b626f71fa8}"
-  timeout_in_minutes: 60 # TODO(ENG-548): reduce timeout once agent-cold-start is optimised.
-  retry:
-    automatic:
-        # This is designed to trap and retry failures because agent lost connection. Agent exits with -1 in this case.
-      - exit_status: -1
-        limit: 3
-  env: &macos-env
-    ACCELERATOR_ENDPOINT: "172.16.100.150"
+#macos: &macos
+#  agents:
+#    - "capable_of_building=gdk-for-unity"
+#    - "environment=production"
+#    - "permission_set=builder"
+#    - "platform=macos"
+#    - "queue=${DARWIN_BUILDER_QUEUE:-v4-1582049359-33db24b626f71fa8}"
+#  timeout_in_minutes: 60 # TODO(ENG-548): reduce timeout once agent-cold-start is optimised.
+#  retry:
+#    automatic:
+#        # This is designed to trap and retry failures because agent lost connection. Agent exits with -1 in this case.
+#      - exit_status: -1
+#        limit: 3
+#  env: &macos-env
+#    ACCELERATOR_ENDPOINT: "172.16.100.150"
 
 linux: &linux
   agents:
@@ -85,18 +85,18 @@ steps:
       BUILD_TARGET_FILTER: "android"
       SCRIPTING_BACKEND: "mono"
 
-  - label: ":darwin: ~ build :ios:"
-    command: bash -c .shared-ci/scripts/build-worker.sh
-    <<: *macos
-    artifact_paths:
-      - logs/**/*
-    env:
-      <<: *macos-env
-      WORKER_TYPE: "MobileClient"
-      BUILD_ENVIRONMENT: "local"
-      BUILD_TARGET_FILTER: "ios"
-      SCRIPTING_BACKEND: "il2cpp"
-      TARGET_IOS_SDK: "simulator"
+#  - label: ":darwin: ~ build :ios:"
+#    command: bash -c .shared-ci/scripts/build-worker.sh
+#    <<: *macos
+#    artifact_paths:
+#      - logs/**/*
+#    env:
+#      <<: *macos-env
+#      WORKER_TYPE: "MobileClient"
+#      BUILD_ENVIRONMENT: "local"
+#      BUILD_TARGET_FILTER: "ios"
+#      SCRIPTING_BACKEND: "il2cpp"
+#      TARGET_IOS_SDK: "simulator"
 
   - label: ":windows: ~ build UnityClient mono"
     command: bash -c .shared-ci/scripts/build-worker.sh
