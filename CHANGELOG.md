@@ -2,11 +2,16 @@
 
 ## Unreleased
 
+### Removed
+
+- Removed the `com.unity.xr.legacyinputhelpers` package from the `manifest.json`. [#107](https://github.com/spatialos/gdk-for-unity-blank-project/pull/107)
+
 ## `0.3.6` - 2020-05-26
 
 ### Changed
 
 - Upgraded to GDK for Unity version `0.3.6`
+
 ## `0.3.5` - 2020-04-23
 
 ### Breaking Changes
