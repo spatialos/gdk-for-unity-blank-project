@@ -1,5 +1,7 @@
 using BlankProject.Scripts.Config;
 using Improbable.Gdk.Core;
+using Improbable.Gdk.Core.Representation;
+using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Worker.CInterop;
 using UnityEngine;
@@ -8,6 +10,8 @@ namespace BlankProject
 {
     public class UnityGameLogicConnector : WorkerConnector
     {
+        [SerializeField] private EntityRepresentationMapping entityRepresentationMapping = default;
+
         public const string WorkerType = "UnityGameLogic";
 
         private async void Start()
@@ -41,6 +45,7 @@ namespace BlankProject
         {
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
         }
     }
 }
