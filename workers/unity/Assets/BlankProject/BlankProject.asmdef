@@ -6,6 +6,7 @@
         "Improbable.Gdk.Mobile",
         "Improbable.Gdk.PlayerLifecycle",
         "Improbable.Gdk.QueryBasedInterestHelper",
+        "Improbable.Gdk.GameObjectCreation",
         "Unity.Entities",
         "Unity.Entities.Hybrid",
         "Unity.Mathematics"
@@ -17,5 +18,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }
