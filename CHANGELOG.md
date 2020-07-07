@@ -2,10 +2,6 @@
 
 ## Unreleased
 
-### Internal
-
-- Updated buildkite artifact paths to only use `/` rather than `\\` as path-seperators. [#109](https://github.com/spatialos/gdk-for-unity-blank-project/pull/109)
-
 ## `0.3.7` - 2020-06-22
 
 ### Changed
