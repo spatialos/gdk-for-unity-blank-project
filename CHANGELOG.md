@@ -2,11 +2,22 @@
 
 ## Unreleased
 
+### Breaking Changes
+
+- Moved the `BlankProject` assembly definition from `Assets` to `Assets/BlankProject` to avoid common compile issues with Plugins. [#111](https://github.com/spatialos/gdk-for-unity-blank-project/pull/111)
+
+### Added
+
+- Enabled GameObject Creation by default using the new Entity Representation assets. [#111](https://github.com/spatialos/gdk-for-unity-blank-project/pull/111)
+  - The prefab mapping assets can be found in `Assets/Config`.
+  - Prefabs no longer need to be stored in `Resources`.
+
 ## `0.3.7` - 2020-06-22
 
 ### Changed
 
 - Upgraded to GDK for Unity version `0.3.7`
+
 ### Removed
 
 - Removed the `com.unity.xr.legacyinputhelpers` package from the `manifest.json`. [#107](https://github.com/spatialos/gdk-for-unity-blank-project/pull/107)
@@ -51,11 +62,13 @@
 ### Changed
 
 - Upgraded to GDK for Unity version `0.3.2`
+
 ## `0.3.1` - 2019-11-25
 
 ### Changed
 
 - Upgraded to GDK for Unity version `0.3.1`
+
 ## `0.3.0` - 2019-11-11
 
 ### Changed

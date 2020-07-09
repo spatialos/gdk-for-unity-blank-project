@@ -1,5 +1,7 @@
 using System;
 using Improbable.Gdk.Core;
+using Improbable.Gdk.Core.Representation;
+using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.PlayerLifecycle;
 using UnityEngine;
 
@@ -7,6 +9,8 @@ namespace BlankProject
 {
     public class UnityClientConnector : WorkerConnector
     {
+        [SerializeField] private EntityRepresentationMapping entityRepresentationMapping = default;
+
         public const string WorkerType = "UnityClient";
 
         private async void Start()
@@ -42,6 +46,7 @@ namespace BlankProject
         protected override void HandleWorkerConnectionEstablished()
         {
             PlayerLifecycleHelper.AddClientSystems(Worker.World);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
         }
     }
 }
