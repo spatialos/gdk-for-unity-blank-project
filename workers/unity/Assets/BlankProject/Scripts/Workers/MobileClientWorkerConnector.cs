@@ -1,5 +1,7 @@
 using System;
 using Improbable.Gdk.Core;
+using Improbable.Gdk.Core.Representation;
+using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.Mobile;
 using Improbable.Gdk.PlayerLifecycle;
 using UnityEngine;
@@ -8,6 +10,8 @@ namespace BlankProject
 {
     public class MobileClientWorkerConnector : WorkerConnector, MobileConnectionFlowInitializer.IMobileSettingsProvider
     {
+        [SerializeField] private EntityRepresentationMapping entityRepresentationMapping = default;
+
 #pragma warning disable 649
         [SerializeField] private string ipAddress;
 #pragma warning restore 649
@@ -45,6 +49,7 @@ namespace BlankProject
         protected override void HandleWorkerConnectionEstablished()
         {
             PlayerLifecycleHelper.AddClientSystems(Worker.World);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
         }
 
         public Option<string> GetReceptionistHostIp()
