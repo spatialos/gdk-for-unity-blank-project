@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## `0.3.8` - 2020-07-20
+
+### Changed
+
+- Upgraded to GDK for Unity version `0.3.8`
 ### Breaking Changes
 
 - Moved the `BlankProject` assembly definition from `Assets` to `Assets/BlankProject` to avoid common compile issues with Plugins. [#111](https://github.com/spatialos/gdk-for-unity-blank-project/pull/111)
