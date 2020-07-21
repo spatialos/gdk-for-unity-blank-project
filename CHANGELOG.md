@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Upgrade to Worker SDK v14.7.0. [#115](https://github.com/spatialos/gdk-for-unity-blank-project/pull/115)
+
 ## `0.3.8` - 2020-07-20
 
 ### Changed
