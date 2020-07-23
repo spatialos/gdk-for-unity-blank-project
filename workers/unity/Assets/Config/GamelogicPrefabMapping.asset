@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityRepresentationResolvers:
   - id: 0
+  - id: 1
   references:
     version: 1
     00000000:
@@ -22,5 +23,13 @@ MonoBehaviour:
       data:
         entityType: Player
         prefab: {fileID: 3310587326296602406, guid: e95498c7b69d86748933361dc4d451dc,
+          type: 3}
+        requiredComponents: 
+    00000001:
+      type: {class: SimpleEntityResolver, ns: Improbable.Gdk.Core.Representation.Types,
+        asm: Improbable.Gdk.Core}
+      data:
+        entityType: Sphere
+        prefab: {fileID: 1447681952198442718, guid: 9949df031989cb74fb54dd60630c172a,
           type: 3}
         requiredComponents: 

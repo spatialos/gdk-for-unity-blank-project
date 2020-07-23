@@ -1,4 +1,5 @@
 using System.IO;
+using BlankProject.Scripts.Config;
 using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
@@ -36,6 +37,9 @@ namespace BlankProject.Editor
             var snapshot = new Snapshot();
 
             AddPlayerSpawner(snapshot);
+
+            AddSpheres(snapshot);
+
             return snapshot;
         }
 
@@ -60,6 +64,19 @@ namespace BlankProject.Editor
                 MobileClientWorkerConnector.WorkerType);
             template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
 
+            snapshot.AddEntity(template);
+        }
+
+        private static void AddSpheres(Snapshot snapshot)
+        {
+            AddSphere(snapshot, new Vector3(-10f, 0.5f, 10f));
+            AddSphere(snapshot, new Vector3(10f, 5f, 10f));
+            AddSphere(snapshot, new Vector3(25f, 0.5f, 0f));
+        }
+
+        private static void AddSphere(Snapshot snapshot, Vector3 position)
+        {
+            var template = EntityTemplates.CreateSphereTemplate(position);
             snapshot.AddEntity(template);
         }
     }

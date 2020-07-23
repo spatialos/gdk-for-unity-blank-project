@@ -8,6 +8,8 @@ namespace BlankProject.Scripts.Config
 {
     public static class EntityTemplates
     {
+        private const int ServerCheckoutRadius = 500;
+
         public static EntityTemplate CreatePlayerEntityTemplate(EntityId entityId, string workerId, byte[] serializedArguments)
         {
             var clientAttribute = EntityTemplate.GetWorkerAccessAttribute(workerId);
@@ -22,10 +24,9 @@ namespace BlankProject.Scripts.Config
 
             PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, serverAttribute);
 
-            const int serverRadius = 500;
             var clientRadius = workerId.Contains(MobileClientWorkerConnector.WorkerType) ? 100 : 500;
 
-            var serverQuery = InterestQuery.Query(Constraint.RelativeCylinder(serverRadius));
+            var serverQuery = InterestQuery.Query(Constraint.RelativeCylinder(ServerCheckoutRadius));
             var clientQuery = InterestQuery.Query(Constraint.RelativeCylinder(clientRadius));
 
             var interest = InterestTemplate.Create()
@@ -34,7 +35,24 @@ namespace BlankProject.Scripts.Config
             template.AddComponent(interest.ToSnapshot(), serverAttribute);
 
             template.SetReadAccess(UnityClientConnector.WorkerType, MobileClientWorkerConnector.WorkerType, serverAttribute);
-            template.SetComponentWriteAccess(EntityAcl.ComponentId, serverAttribute);
+
+            return template;
+        }
+
+        public static EntityTemplate CreateSphereTemplate(Vector3 position = default)
+        {
+            var serverAttribute = UnityGameLogicConnector.WorkerType;
+
+            var template = new EntityTemplate();
+            template.AddComponent(new Position.Snapshot(Coordinates.FromUnityVector(position)), serverAttribute);
+            template.AddComponent(new Metadata.Snapshot("Sphere"), serverAttribute);
+            template.AddComponent(new Persistence.Snapshot(), serverAttribute);
+
+            var query = InterestQuery.Query(Constraint.RelativeCylinder(ServerCheckoutRadius));
+            var interest = InterestTemplate.Create().AddQueries<Position.Component>(query);
+            template.AddComponent(interest.ToSnapshot());
+
+            template.SetReadAccess(UnityClientConnector.WorkerType, MobileClientWorkerConnector.WorkerType, serverAttribute);
 
             return template;
         }
