@@ -2,6 +2,7 @@ using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Gdk.QueryBasedInterest;
+using Vector3 = UnityEngine.Vector3;
 
 namespace BlankProject.Scripts.Config
 {
@@ -12,8 +13,11 @@ namespace BlankProject.Scripts.Config
             var clientAttribute = EntityTemplate.GetWorkerAccessAttribute(workerId);
             var serverAttribute = UnityGameLogicConnector.WorkerType;
 
+            var position = new Vector3(0, 1f, 0);
+            var coords = Coordinates.FromUnityVector(position);
+
             var template = new EntityTemplate();
-            template.AddComponent(new Position.Snapshot(), clientAttribute);
+            template.AddComponent(new Position.Snapshot(coords), clientAttribute);
             template.AddComponent(new Metadata.Snapshot("Player"), serverAttribute);
 
             PlayerLifecycleHelper.AddPlayerLifecycleComponents(template, workerId, serverAttribute);

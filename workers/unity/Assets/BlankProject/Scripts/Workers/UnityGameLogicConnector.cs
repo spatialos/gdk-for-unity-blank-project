@@ -14,6 +14,9 @@ namespace BlankProject
 
         public const string WorkerType = "UnityGameLogic";
 
+        [SerializeField] private GameObject level;
+        private GameObject levelInstance;
+
         private async void Start()
         {
             PlayerLifecycleConfig.CreatePlayerEntityTemplate = EntityTemplates.CreatePlayerEntityTemplate;
@@ -46,6 +49,23 @@ namespace BlankProject
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
             GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
+
+            if (level == null)
+            {
+                return;
+            }
+
+            levelInstance = Instantiate(level, transform.position, transform.rotation);
+        }
+
+        public override void Dispose()
+        {
+            if (levelInstance != null)
+            {
+                Destroy(levelInstance);
+            }
+
+            base.Dispose();
         }
     }
 }

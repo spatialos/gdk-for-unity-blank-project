@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0598980a22146e5bb63df7b024cf2b0, type: 3}
   m_Name: GamelogicPrefabMapping
   m_EditorClassIdentifier: 
-  EntityRepresentationResolvers: []
+  EntityRepresentationResolvers:
+  - id: 0
   references:
     version: 1
+    00000000:
+      type: {class: SimpleEntityResolver, ns: Improbable.Gdk.Core.Representation.Types,
+        asm: Improbable.Gdk.Core}
+      data:
+        entityType: Player
+        prefab: {fileID: 3310587326296602406, guid: e95498c7b69d86748933361dc4d451dc,
+          type: 3}
+        requiredComponents: 

@@ -13,6 +13,9 @@ namespace BlankProject
 
         public const string WorkerType = "UnityClient";
 
+        [SerializeField] private GameObject level;
+        private GameObject levelInstance;
+
         private async void Start()
         {
             var connParams = CreateConnectionParameters(WorkerType);
@@ -47,6 +50,23 @@ namespace BlankProject
         {
             PlayerLifecycleHelper.AddClientSystems(Worker.World);
             GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
+
+            if (level == null)
+            {
+                return;
+            }
+
+            levelInstance = Instantiate(level, transform.position, transform.rotation);
+        }
+
+        public override void Dispose()
+        {
+            if (levelInstance != null)
+            {
+                Destroy(levelInstance);
+            }
+
+            base.Dispose();
         }
     }
 }
