@@ -3,6 +3,8 @@ using Improbable.Gdk.Core;
 using Improbable.Gdk.Core.Representation;
 using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Gdk.TransformSynchronization;
+using Scripts.Worker;
 using UnityEngine;
 
 namespace BlankProject
@@ -49,7 +51,10 @@ namespace BlankProject
         protected override void HandleWorkerConnectionEstablished()
         {
             PlayerLifecycleHelper.AddClientSystems(Worker.World);
-            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
+            TransformSynchronizationHelper.AddClientSystems(Worker.World);
+
+            var gameObjectCreator = new GameObjectCreatorFromTransform(WorkerType, transform.position);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, gameObjectCreator, entityRepresentationMapping);
 
             if (level == null)
             {

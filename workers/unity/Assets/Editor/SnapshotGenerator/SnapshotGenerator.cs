@@ -72,11 +72,23 @@ namespace BlankProject.Editor
             AddSphere(snapshot, new Vector3(-10f, 0.5f, 10f));
             AddSphere(snapshot, new Vector3(10f, 5f, 10f));
             AddSphere(snapshot, new Vector3(25f, 0.5f, 0f));
+
+            var rotation = new Quaternion
+            {
+                eulerAngles = new Vector3(90, 0, 0)
+            };
+            AddSphere(snapshot, new Vector3(-4f, 0.5f, 4f), rotation);
+            AddSphere(snapshot, new Vector3(-4f, 0.5f, 7f));
         }
 
         private static void AddSphere(Snapshot snapshot, Vector3 position)
         {
-            var template = EntityTemplates.CreateSphereTemplate(position);
+            AddSphere(snapshot, position, Quaternion.identity);
+        }
+
+        private static void AddSphere(Snapshot snapshot, Vector3 position, Quaternion rotation)
+        {
+            var template = EntityTemplates.CreateSphereTemplate(rotation, position);
             snapshot.AddEntity(template);
         }
     }

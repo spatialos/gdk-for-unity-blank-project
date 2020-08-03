@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8439300253409414019}
   - component: {fileID: 4636361848677334373}
   - component: {fileID: 7099552605631244661}
+  - component: {fileID: 6781916759473818348}
+  - component: {fileID: -3107228151339240895}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -119,3 +121,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5a630873b341eaba3129bc176ee799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6781916759473818348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310587326296602406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3a96c6e8d94c9eb484d50e41657561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSpeed: 5
+--- !u!114 &-3107228151339240895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310587326296602406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78feab8868282945ad03dd56b17ce6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReceiveStrategies:
+  - {fileID: 11400000, guid: ec8a6d9eb4cab7c4281b23ec2946c05b, type: 2}
+  SendStrategies:
+  - {fileID: 11400000, guid: 8e3209a59ff98574782675d33aad7d82, type: 2}
+  SetKinematicWhenNotAuthoritative: 1

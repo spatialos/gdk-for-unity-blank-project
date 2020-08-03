@@ -6,8 +6,8 @@
       "snapshotWritePeriodSeconds": 0
     },
     "dimensions": {
-      "xMeters": 5000,
-      "zMeters": 5000
+      "xMeters": 500,
+      "zMeters": 500
     },
     "legacy_flags": [
       {
@@ -38,14 +38,6 @@
     },
     {
       "worker_type": "UnityClient",
-      "permissions": [
-        {
-          "all": {}
-        }
-      ]
-    },
-    {
-      "worker_type": "MobileClient",
       "permissions": [
         {
           "all": {}

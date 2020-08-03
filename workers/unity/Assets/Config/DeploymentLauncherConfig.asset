@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssemblyConfig:
     ProjectName: unity_gdk
-    AssemblyName: blank_assembly
+    AssemblyName: my_first_assembly
     ShouldForceUpload: 0
   DeploymentConfigs:
   - ProjectName: unity_gdk
-    AssemblyName: blank_assembly
+    AssemblyName: my_first_assembly
     Deployment:
-      Name: blank_deployment
+      Name: my_first_deployment
       SnapshotPath: snapshots/default.snapshot
       LaunchJson: cloud_launch.json
       Region: 1
