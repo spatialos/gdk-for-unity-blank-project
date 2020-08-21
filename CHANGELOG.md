@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- Added `com.unity.quicksearch` package for easy search. [#121](https://github.com/spatialos/gdk-for-unity-blank-project/pull/121)
+
 ### Changed
 
 - Migrated launch configurations to latest game templates. [#120](https://github.com/spatialos/gdk-for-unity-blank-project/pull/120)
@@ -11,6 +15,7 @@
 ### Changed
 
 - Upgraded to GDK for Unity version `0.3.10`
+
 ## `0.3.9` - 2020-07-24
 
 ### Changed
