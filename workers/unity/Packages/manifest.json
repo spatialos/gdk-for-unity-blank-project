@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "com.unity.ide.rider": "1.1.4",
+    "com.unity.ide.rider": "2.0.7",
+    "com.unity.ide.visualstudio": "2.0.2",
     "com.unity.quicksearch": "2.0.0",
-    "com.unity.test-framework": "1.1.11",
+    "com.unity.test-framework": "1.1.16",
     "com.unity.timeline": "1.2.10",
     "com.unity.ugui": "1.0.0",
     "io.improbable.gdk.buildsystem": "0.3.10",
