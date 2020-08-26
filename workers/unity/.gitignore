@@ -24,3 +24,5 @@
 # Jetbrains
 /Assets/Plugins/Editor/Jetbrains
 /Assets/Plugins/Editor/Jetbrains.meta
+
+/Packages/packages-lock.json
