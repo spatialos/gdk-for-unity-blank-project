@@ -9,9 +9,6 @@
 ### Changed
 
 - Migrated launch configurations to latest game templates. [#120](https://github.com/spatialos/gdk-for-unity-blank-project/pull/120)
-
-### Fixed
-
 - Enable Burst by default. [#124](https://github.com/spatialos/gdk-for-unity-blank-project/pull/124)
 
 ## `0.3.10` - 2020-08-18
