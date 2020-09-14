@@ -2,12 +2,15 @@
 
 ## Unreleased
 
+## `0.4.0` - 2020-09-14
+
 ### Added
 
 - Added `com.unity.quicksearch` package for easy search. [#121](https://github.com/spatialos/gdk-for-unity-blank-project/pull/121)
 
 ### Changed
 
+- Upgraded to GDK for Unity version `0.4.0`
 - Migrated launch configurations to latest game templates. [#120](https://github.com/spatialos/gdk-for-unity-blank-project/pull/120)
 - Enable Burst by default. [#124](https://github.com/spatialos/gdk-for-unity-blank-project/pull/124)
 
