@@ -1,9 +1,16 @@
 {
-    "SchemaStdLibDir": "../../build/dependencies/schema/standard_library",
-    "SchemaSourceDirs": [],
+    "SchemaSourceDirs": [
+        "../../schema"
+    ],
+    "VerboseLogging": false,
+    "CodegenLogOutputDir": "logs/",
     "CodegenOutputDir": "Assets/Generated/Source",
+    "CodegenEditorOutputDir": "Assets/Generated/Editor",
     "DescriptorOutputDir": "../../build/assembly/schema",
-    "RuntimeIp": "",
+    "SerializationOverrides": [],
     "DevAuthTokenDir": "Resources",
-    "DevAuthTokenLifetimeDays": 30
+    "DevAuthTokenLifetimeDays": 30,
+    "SaveDevAuthTokenToFile": false,
+    "EnvironmentPlatform": "",
+    "RuntimeVersionOverride": ""
 }

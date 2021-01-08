@@ -1,0 +1,46 @@
+package playground;
+
+import "improbable/gdk/player_lifecycle/player_heartbeat.schema";
+import "improbable/gdk/player_lifecycle/player_creator.schema";
+import "improbable/gdk/player_lifecycle/owning_worker.schema";
+import "improbable/standard_library.schema";
+
+component_set AuthorityDelegationSet {
+    id = 70000;
+
+    components = [
+        improbable.AuthorityDelegation
+    ];
+}
+
+component_set PlayerClientSet {
+    id = 70001;
+
+    components = [
+        improbable.Position,
+        improbable.gdk.player_lifecycle.PlayerHeartbeatClient
+    ];
+}
+
+component_set PlayerServerSet {
+    id = 70002;
+
+    components = [
+        improbable.Metadata,
+        improbable.Interest,
+        improbable.gdk.player_lifecycle.PlayerHeartbeatServer,
+        improbable.gdk.player_lifecycle.OwningWorker
+    ];
+}
+
+component_set DefaultServerSet {
+    id = 70003;
+
+    components = [
+        improbable.Position,
+        improbable.Metadata,
+        improbable.Interest,
+        improbable.gdk.player_lifecycle.PlayerCreator,
+        improbable.gdk.player_lifecycle.OwningWorker
+    ];
+}
