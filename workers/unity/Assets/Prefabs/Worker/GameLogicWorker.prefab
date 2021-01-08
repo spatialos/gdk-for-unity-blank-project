@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126696593424655035}
   - component: {fileID: 2126696593424655034}
+  - component: {fileID: 1305026597}
   m_Layer: 0
   m_Name: GameLogicWorker
   m_TagString: Untagged
@@ -46,3 +47,15 @@ MonoBehaviour:
   MaxConnectionAttempts: 3
   entityRepresentationMapping: {fileID: 11400000, guid: d7177170b2dc0444f82f6d4d018797e0,
     type: 2}
+--- !u!114 &1305026597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126696593424655033}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448ba34824c2441aa37b071766882ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
