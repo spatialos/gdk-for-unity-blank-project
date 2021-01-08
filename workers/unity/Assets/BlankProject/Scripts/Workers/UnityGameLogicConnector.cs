@@ -57,7 +57,7 @@ namespace BlankProject
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
             Worker.World.GetOrCreateSystem<ClientPartitionsSystem>();
             Worker.World.GetOrCreateSystem<AssignEntitiesSystem>();
-            
+
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
             GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping, gameObject);
         }
