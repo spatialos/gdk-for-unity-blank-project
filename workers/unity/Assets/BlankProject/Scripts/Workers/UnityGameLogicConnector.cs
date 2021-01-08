@@ -4,6 +4,7 @@ using Improbable.Gdk.Core.Representation;
 using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Worker.CInterop;
+using Playground.LoadBalancing;
 using UnityEngine;
 
 namespace BlankProject
@@ -25,6 +26,16 @@ namespace BlankProject
             {
                 flow = new ReceptionistFlow(CreateNewWorkerId(WorkerType));
                 connectionParameters = CreateConnectionParameters(WorkerType);
+
+                /*
+                 * If we are in the Editor, it means we are either:
+                 *      - connecting to a local deployment
+                 *      - connecting to a cloud deployment via `spatial cloud connect external`
+                 * in the first case, the security type must be Insecure.
+                 * in the second case, its okay for the security type to be Insecure.
+                */
+                connectionParameters.Network.Kcp.SecurityType = NetworkSecurityType.Insecure;
+                connectionParameters.Network.Tcp.SecurityType = NetworkSecurityType.Insecure;
             }
             else
             {
@@ -44,8 +55,11 @@ namespace BlankProject
         protected override void HandleWorkerConnectionEstablished()
         {
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
+            Worker.World.GetOrCreateSystem<ClientPartitionsSystem>();
+            Worker.World.GetOrCreateSystem<AssignEntitiesSystem>();
+            
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
-            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping);
+            GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping, gameObject);
         }
     }
 }

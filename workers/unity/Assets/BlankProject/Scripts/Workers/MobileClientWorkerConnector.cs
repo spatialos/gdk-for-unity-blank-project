@@ -4,6 +4,7 @@ using Improbable.Gdk.Core.Representation;
 using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.Mobile;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Worker.CInterop;
 using UnityEngine;
 
 namespace BlankProject
@@ -33,6 +34,15 @@ namespace BlankProject
             switch (flowInitializer.GetConnectionService())
             {
                 case ConnectionService.Receptionist:
+                    /*
+                     * If we are connecting via the Receptionist we are either:
+                     *      - connecting to a local deployment
+                     *      - connecting to a cloud deployment via `spatial cloud connect external`
+                     * in the first case, the security type must be Insecure.
+                     * in the second case, its okay for the security type to be Insecure.
+                    */
+                    connParams.Network.Kcp.SecurityType = NetworkSecurityType.Insecure;
+                    connParams.Network.Tcp.SecurityType = NetworkSecurityType.Insecure;
                     builder.SetConnectionFlow(new ReceptionistFlow(CreateNewWorkerId(WorkerType),
                         flowInitializer));
                     break;
