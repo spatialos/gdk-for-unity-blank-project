@@ -2,7 +2,9 @@ using BlankProject.Scripts.Config;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.Core.Representation;
 using Improbable.Gdk.GameObjectCreation;
+using Improbable.Gdk.LoadBalancing;
 using Improbable.Gdk.PlayerLifecycle;
+using Improbable.Generated;
 using Improbable.Worker.CInterop;
 using Playground.LoadBalancing;
 using UnityEngine;
@@ -55,11 +57,16 @@ namespace BlankProject
         protected override void HandleWorkerConnectionEstablished()
         {
             Worker.World.GetOrCreateSystem<MetricSendSystem>();
-            Worker.World.GetOrCreateSystem<ClientPartitionsSystem>();
-            Worker.World.GetOrCreateSystem<AssignEntitiesSystem>();
 
             PlayerLifecycleHelper.AddServerSystems(Worker.World);
             GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World, entityRepresentationMapping, gameObject);
+
+            Worker.AddLoadBalancingSystems(configuration =>
+            {
+                configuration.AddPartitionManagement(WorkerType, UnityClientConnector.WorkerType, MobileClientWorkerConnector.WorkerType);
+                configuration.AddClientLoadBalancing("Player", ComponentSets.PlayerClientSet);
+                configuration.SetSingletonLoadBalancing(WorkerType, new EntityLoadBalancingMap(ComponentSets.DefaultServerSet).AddOverride("Player", ComponentSets.PlayerServerSet));
+            });
         }
     }
 }
