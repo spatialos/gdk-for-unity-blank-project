@@ -9,7 +9,8 @@
         "Improbable.Gdk.GameObjectCreation",
         "Unity.Entities",
         "Unity.Entities.Hybrid",
-        "Unity.Mathematics"
+        "Unity.Mathematics",
+        "Improbable.Gdk.LoadBalancing"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
