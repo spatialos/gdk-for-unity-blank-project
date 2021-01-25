@@ -10,6 +10,9 @@ namespace BlankProject.Scripts.Config
 {
     public static class EntityTemplates
     {
+        public static readonly EntityId LoadBalancingPartitionEntityId = new EntityId(1);
+        public static readonly EntityId PlayerCreatorEntityId = new EntityId(2);
+
         public static EntityTemplate CreatePlayerEntityTemplate(EntityId entityId, EntityId clientWorkerEntityId,
             byte[] serializedArguments)
         {
@@ -53,7 +56,7 @@ namespace BlankProject.Scripts.Config
             var template = new EntityTemplate();
             template.AddComponent(new AuthorityDelegation.Snapshot(new Dictionary<uint, long>
             {
-                { ComponentSets.AuthorityDelegationSet.ComponentSetId, 1 }
+                { ComponentSets.AuthorityDelegationSet.ComponentSetId, LoadBalancingPartitionEntityId.Id }
             }));
             return template;
         }

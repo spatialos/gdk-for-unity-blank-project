@@ -31,8 +31,8 @@ namespace BlankProject.Editor
         private static Snapshot CreateSnapshot()
         {
             var snapshot = new Snapshot();
-            snapshot.AddEntity(new EntityId(1), EntityTemplates.CreateLoadBalancingPartition());
-            snapshot.AddEntity(EntityTemplates.CreatePlayerSpawner());
+            snapshot.AddEntity(EntityTemplates.LoadBalancingPartitionEntityId, EntityTemplates.CreateLoadBalancingPartition());
+            snapshot.AddEntity(EntityTemplates.PlayerCreatorEntityId, EntityTemplates.CreatePlayerSpawner());
             return snapshot;
         }
     }

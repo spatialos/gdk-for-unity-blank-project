@@ -20,6 +20,7 @@ namespace BlankProject
         private async void Start()
         {
             PlayerLifecycleConfig.CreatePlayerEntityTemplate = EntityTemplates.CreatePlayerEntityTemplate;
+            PlayerLifecycleConfig.PlayerCreatorEntityId = EntityTemplates.PlayerCreatorEntityId;
 
             IConnectionFlow flow;
             ConnectionParameters connectionParameters;
