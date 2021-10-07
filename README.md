@@ -21,7 +21,7 @@
 **Note**: The GDK is frozen for users who have not yet migrated their project to SpatialOS running on zeuz. See [github.com/spatialos/gdk-for-unity#readme](github.com/spatialos/gdk-for-unity#readme) for further information.
 
 ### The SpatialOS GDK for Unity Blank Project
-This is a blank project that you can use to as a base for your own game with the [SpatialOS GDK for Unity](https://github.com/spatialos/gdk-for-unity). It has the GDK boilerplate required to start developing games for SpatialOS.
+This is a blank project that you can use as a base for your own game with the [SpatialOS GDK for Unity](https://github.com/spatialos/gdk-for-unity). It has the GDK boilerplate required to start developing games for SpatialOS.
 
 
 ---
